@@ -4,12 +4,24 @@ import pandas as pd
 import zipfile
 from io import BytesIO
 ### 2013_url = 'http://publicpay.ca.gov/Reports/RawExport.aspx?file=2013_City.zip'
-url_base = 'http://publicpay.ca.gov/Reports/RawExport.aspx?file='
 
-year = "2013"
-url_year = '%s_City' % year
-r = requests.get(url_base + url_year + '.zip')
-z = zipfile.ZipFile(BytesIO(r.content))
-city2013 = pd.read_csv(z.open(url_year + '.csv'), skiprows=2)
+hdv = []
+years = [2010,2013]
 
-print(city2013.head())
+for year in years:
+	filename = '%s_City' % year
+	url = 'http://publicpay.ca.gov/Reports/RawExport.aspx?file=%s.zip' % filename
+	
+	print('Downloading %s File' % year) 
+	r = requests.get(url)
+	
+	print("Unzipping and reading")
+	z = zipfile.ZipFile(BytesIO(r.content))
+	city = pd.read_csv(z.open(filename+'.csv'), skiprows=4, encoding='latin_1', usecols=['Health Dental Vision'],low_memory=False)
+
+	# Can select any field names that are wanted. 
+	med = city['Health Dental Vision'].median()
+	print("Median for %s:" % year, med)
+	hdv.append(med)
+
+print("Difference: ", hdv[1]-hdv[0])
