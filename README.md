@@ -1,3 +1,7 @@
+Working my way through these scraping tasks.
+
+Original README:
+
 ## Search-Script-Scrape: 101 webscraping and research tasks for the data journalist
 
 __Note:__ This exercise set is part of the [Stanford Computational Journalism Lab](http://cjlab.stanford.edu). I've also written [a blog post that gives a little more elaboration about the libraries used and a few of the exercises](http://blog.danwin.com/examples-of-web-scraping-in-python-3-x-for-data-journalists/).
