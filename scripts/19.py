@@ -1,5 +1,6 @@
 # The total number of preliminary reports on aircraft safety incidents/accidents in the last 10 business days
 from lxml import html
+import re
 import requests
 url = 'http://www.asias.faa.gov/pls/apex/f?p=100:93:0::NO:::'
 doc = html.fromstring(requests.get(url).text)
