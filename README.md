@@ -2,9 +2,16 @@ Working my way through these scraping tasks.
 
 ## Issues so far:
 
-Script 9: I think the difference of "yeas" and "nays" *(nays-yeas)* should be *abs(nays-yeas)*
+* Script 9: I think the difference of "yeas" and "nays" *(nays-yeas)* should be *abs(nays-yeas)*.
 
-Script 36: The original script sums number of visits, not number of *visitors*.
+E.g: 
+With [Vote 270 (47-52)](http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=114&session=1&vote=00270), the (nays - yeas) = 5. 
+
+[Vote 273 (50-44)](http://www.senate.gov/legislative/LIS/roll_call_lists/roll_call_vote_cfm.cfm?congress=114&session=1&vote=00273), (nays - yeas) = -6. 
+
+Both were rejected, by the latter would count towards the margin being less than five. Using the absolute value of the difference would reject both these cases. 
+
+* Script 36: The original script sums number of visits, not number of *visitors*.
 
 Original README:
 
