@@ -1,5 +1,11 @@
 Working my way through these scraping tasks.
 
+## Issues so far:
+
+Script 9: I think the difference of "yeas" and "nays" *(nays-yeas)* should be *abs(nays-yeas)*
+
+Script 36: The original script sums number of visits, not number of *visitors*.
+
 Original README:
 
 ## Search-Script-Scrape: 101 webscraping and research tasks for the data journalist
