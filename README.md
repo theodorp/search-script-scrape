@@ -1,6 +1,6 @@
 Working my way through these scraping tasks.
 
-## Issues so far:
+## My issues so far:
 
 * Script 9: I think the difference of "yeas" and "nays" *(nays-yeas)* should be *abs(nays-yeas)*.
 
